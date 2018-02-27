@@ -1,16 +1,20 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mattcoleman/.oh-my-zsh
+  export ZSH=/home/coleman/.oh-my-zsh
 
-. ~/.profile
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -47,14 +51,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git autojump docker lein mvn npm python)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -70,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -80,18 +83,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-192.168.56.101	Win7Oracle11gVM
-
-alias vbmsr="cd /Users/mattcoleman/Development/Sparc/VBMS-R"
-alias dvsrunner="cd /Users/mattcoleman/Development/Sparc/VBMS-R/code/rating_tools/dvs_runner"
-alias weblogic="cd /Users/mattcoleman/Oracle/Middleware/user_projects/domains/Rating_RelX_TEST"
-alias coby="mvn cobertura:cobertura"
-alias rcode="cd /Users/mattcoleman/Development/Sparc/VBMS-R/code"
-alias redo="mvn clean install"
-alias rprojects="vi /Users/mattcoleman/Development/Sparc/VBMS-R/scripts/rules/rules.projects"
-alias aliases="sudo vi ~/.zshrc"
-alias morning="vbmsr && cd db-config/ && mvn install && rcode && redo"
-alias dev="cd ~/Development"
-alias node="cd ~/Development/personal/Node"
-alias push="git push origin master"
+alias coleman="cd /mnt/c/Users/Coleman"
+alias python="python3"
+alias pip="pip3"
+alias venv="source /bin/activate"
+alias push="git push"
+alias pull="git pull"
+alias fetch="git fetch upstream"
+alias synclocal="git fetch upstream && git checkout master && git merge upstream/master && git push"
+alias branch="git branch"
+alias master="git checkout master"
+alias status="git status"
